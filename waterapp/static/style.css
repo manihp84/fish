@@ -1,0 +1,367 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* .site-title img {
+    max-height: 54px;
+}
+*{
+    border: 1px solid red;
+  } */
+
+.navbar-brand img {
+    max-width: 195px;
+    margin-left: 161px;
+    margin-right: 78px;
+}
+
+.nav-link {
+    color: #333;
+    font-family: arial;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+.nav-link:hover {
+    color: #abb8c3;
+}
+
+.d-block.w-100 {
+    height: 700px;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 300;
+    text-transform: none;
+    margin-top: 0;
+    font-family: "Poppins";
+}
+
+.custom-card {
+    width: 220px;
+    height: 189px;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+}
+
+.card-img-top.img-fluid {
+    max-width: 100%;
+    height: 188px;
+    transition: transform 0.5s ease;
+}
+
+.card-img-top.img-fluid:hover {
+    transform: scale(1.1);
+}
+
+figcaption {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    width: 100%;
+    padding: 0 68px;
+    color: #fff;
+    top: 50%;
+    z-index: 100;
+}
+
+.pt-60 {
+    padding-top: 61px;
+    padding-bottom: 60px;
+}
+
+.title h1 {
+    margin-bottom: 1.4em;
+    padding-bottom: 0.3em;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ccc;
+    text-align: center;
+}
+
+.blog-list li {
+    display: flex;
+}
+
+.icon-1 {
+    font-size: 54px;
+    color: #333;
+}
+
+.icon-1:hover {
+    color: #fff;
+}
+
+.title-2 h5 {
+    font-size: 27px;
+    padding-left: 31px;
+    padding-top: 26px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.blog-list li {
+    display: flex;
+    border-bottom: 1px solid #333;
+    /* Add this line to apply a 1px solid border at the bottom */
+    color: #333;
+    transition: all ease-in 1s;
+}
+
+.blog-list li:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.home-launch {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    padding: 1.4em 2.4em;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    outline: 0;
+    background: #fff;
+    color: #222;
+    border: 2px solid #222;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.home-launch a {
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: #fff;
+    background: #212933;
+    border-color: transparent;
+}
+
+.social {
+    text-align: center;
+}
+
+.social h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ccc;
+    padding-bottom: 20px;
+}
+
+.social a {
+    margin: 17px;
+    font-size: 40px;
+    color: #212933;
+}
+
+.social a:hover {
+    color: #867bd8;
+}
+
+.m-50 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+.insta img {
+    transition: filter 0.3s ease;
+    /* Smooth transition effect */
+}
+
+.insta img:hover {
+    filter: brightness(50%);
+    /* Darken the image on hover */
+}
+.insta .img-fluid {
+    width: 100%;
+    height: 100px;
+  }
+
+/* Basic styling, you can customize as needed */
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.cont-title-1 {
+    font-size: 44px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 20px;
+}
+
+.cont-title {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 20px;
+}
+/* about css */
+.banner {
+    padding-top: 0px;
+    padding-bottom: 20px;
+  }
+  
+  .banner-image {
+    width: 100%; 
+    height: 650px;
+    padding: 0px;
+  }
+
+  .about-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .about-section h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-weight: 600;
+    padding-bottom: 15px;
+  }
+
+  .about-section p {
+    font-family: sans-serif;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* login css */
+  .login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* signupcss */
+.signup-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup-container button:hover {
+    background-color: #0056b3;
+}
