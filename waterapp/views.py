@@ -18,7 +18,7 @@ def service(request):
 def change_path(request, new_path):
     return redirect(new_path)
 
-def create(request):
+def pinki(request):
     if request.method == 'POST':
         fm = empForm(request.POST)
         if fm.is_valid():
@@ -48,4 +48,16 @@ def delete(request,id):
     dataget.delete()
     return redirect('read')
 
+def emp1(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        print(name)
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Validate the data (simple example, add more checks as needed)
+        if name and email and message:
+            emp.objects.create(name=name, email=email, message=message)
+            return HttpResponse('success')  # Define a success URL or view
+    return render(request, 'waterapp/contact.html')
    
