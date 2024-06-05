@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
 from .models import emp
 from.forms import empForm
+from .forms import signupmodel
 # Create your views here.
 def index(request):
     return render(request,'waterapp/index.html')
@@ -22,8 +24,24 @@ def contact(request):
     # return render(request,'waterapp/contact.html')
 def login(request):
     return render(request,'waterapp/login.html')
-def signup(request):
-    return render(request,'waterapp/signup.html')
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = signupmodel(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            confirm_password = form.cleaned_data['confirm_password']
+            if password==confirm_password:
+                form.save()    
+                return HttpResponse('success')  # Define a success URL or view
+            else:
+                return HttpResponse('password not match')
+    else:
+        form = signupmodel()
+    return render(request, 'waterapp/signup.html', {'form': form})
+
 def service(request):
     return render(request,'waterapp/service.html')
 def change_path(request, new_path):
