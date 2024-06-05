@@ -8,7 +8,18 @@ def index(request):
 def about(request):
     return render(request,'waterapp/about.html')
 def contact(request):
-    return render(request,'waterapp/contact.html')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        print(name)
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Validate the data (simple example, add more checks as needed)
+        if name and email and message:
+            emp.objects.create(name=name, email=email, message=message)
+            return HttpResponse('success')  # Define a success URL or view
+    return render(request, 'waterapp/contact.html')
+    # return render(request,'waterapp/contact.html')
 def login(request):
     return render(request,'waterapp/login.html')
 def signup(request):
