@@ -1,12 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from .decorators import login_required 
 from .models import emp
 from.forms import empForm
-from .forms import signupmodel
+from .forms import signupmodel, loginform
+from django.contrib.auth.hashers import check_password  # Import password checking utility
+from django.contrib.auth import login as auth_login, get_user_model
+from .models import signup
+from django.contrib import messages 
 # Create your views here.
+
 def index(request):
     return render(request,'waterapp/index.html')
+@login_required
 def about(request):
     return render(request,'waterapp/about.html')
 def contact(request):
@@ -30,7 +36,6 @@ def signup_view(request):
     if request.method == 'POST':
         form = signupmodel(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             confirm_password = form.cleaned_data['confirm_password']
             if password==confirm_password:
@@ -41,6 +46,33 @@ def signup_view(request):
     else:
         form = signupmodel()
     return render(request, 'waterapp/signup.html', {'form': form})
+
+def login(request):
+    if request.method == 'POST':
+        f = loginform(request.POST)
+        if f.is_valid():
+            username = f.cleaned_data['username']
+            password = f.cleaned_data['password']
+            print(username)
+            print(password)
+            try:
+                user = signup.objects.get(username=username)
+                if user.password == password:
+                    print(user)
+                    request.session['user_id'] = user.id
+                    request.session['username'] = user.username
+                    f.save()
+                    return redirect('/')   # Redirect to a success URL or view
+                else:
+                    return HttpResponse('Invalid credentials')
+            except signup.DoesNotExist:
+                return HttpResponse('Invalid credentials')
+    else:
+        f = loginform()
+        if 'next' in request.GET:
+            messages.warning(request, "You need to be logged in to access this page.")
+    return render(request, 'waterapp/login.html', {"f": f})
+
 
 def service(request):
     return render(request,'waterapp/service.html')

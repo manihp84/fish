@@ -5,11 +5,16 @@
     <title>Signup</title>
 {% endblock %}
 
-{% block content %} <br><br>
+{% block content %}
+<link href="{% static 'style.css' %}" rel="stylesheet"> 
+
+<br><br>
+<div class="container">
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form }}
     <button type="submit">Signup</button>
+</div>
 <br><br>
 
 {% endblock %}

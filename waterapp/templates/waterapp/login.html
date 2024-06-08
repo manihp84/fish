@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
+<!-- 
 <link href="{% static 'style.css' %}" rel="stylesheet">
-
 <div class="login-container">
     <h2>Login</h2>
     <form action="/login/" method="post">
@@ -23,5 +23,58 @@
         <button type="submit">Login</button>
     </form>
     
-</div>
+</div> -->
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        .messages {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .messages li {
+            margin: 0 0 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .messages .info {
+            background-color: #d9edf7;
+            color: #31708f;
+            border: 1px solid #bce8f1;
+        }
+        .messages .warning {
+            background-color: #fcf8e3;
+            color: #8a6d3b;
+            border: 1px solid #faebcc;
+        }
+        .messages .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+        .messages .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+    </style>
+</head>
+<body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ f.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
 {% endblock %}
