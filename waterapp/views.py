@@ -73,6 +73,9 @@ def login(request):
             messages.warning(request, "You need to be logged in to access this page.")
     return render(request, 'waterapp/login.html', {"f": f})
 
+def logout_view(request):
+    request.session.flush()
+    return redirect('login')
 
 def service(request):
     return render(request,'waterapp/service.html')

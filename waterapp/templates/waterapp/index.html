@@ -50,6 +50,10 @@
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true"href="{%url 'signup_view'%}" onclick="change_path('/signup')">signup</a>
               </li>
+              {% if request.session.username %}
+              <li>Welcome, {{ request.session.username }}!</li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% endif %}
             </ul>
           </div>
         </div>
