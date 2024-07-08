@@ -40,7 +40,7 @@ def signup_view(request):
             confirm_password = form.cleaned_data['confirm_password']
             if password==confirm_password:
                 form.save()    
-                return HttpResponse('success')  # Define a success URL or view
+                return redirect('/')  # Define a success URL or view
             else:
                 return HttpResponse('password not match')
     else:

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     'waterapp'
 ]
 
@@ -84,7 +83,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST':'localhost',
-        'PORT':'3306',
+        'PORT':'3306git ',
     }
 }
 
