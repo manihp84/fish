@@ -83,7 +83,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST':'localhost',
-        'PORT':'3306git ',
+        'PORT':'3306',
     }
 }
 
